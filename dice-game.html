@@ -293,12 +293,12 @@
         <p class="section-label">Overview</p>
         <h2>The Challenge & Project Scope</h2>
         <p>
-            Developed as part of the <strong>EECE.3170: Microprocessors I</strong> curriculum, this project focuses on low-level interaction with a physical microcontroller platform without an operating system layer[cite: 1]. The objective was to engineer an interactive, real-time two-player dice game requiring high timing accuracy, debounced switch signals, and custom multi-peripheral register configurations[cite: 1, 2, 23].
+            Developed as part of the <strong>EECE.3170: Microprocessors I</strong> curriculum, this project focuses on low-level interaction with a physical microcontroller platform without an operating system layer. The objective was to engineer an interactive, real-time two-player dice game requiring high timing accuracy, debounced switch signals, and custom multi-peripheral register configurations.
         </p>
 
         <div class="role-callout">
             <strong>My Role</strong>
-            <p>Developer and Designer – Responsible for writing the complete low-level driver initialization routines, structural interrupt vectors, pseudo-random generation logic via ADC sampling registers, hardware layouts, and signal processing loops[cite: 1, 2, 6].</p>
+            <p>Developer and Designer – Responsible for writing the complete low-level driver initialization routines, structural interrupt vectors, pseudo-random generation logic via ADC sampling registers, hardware layouts, and signal processing loops.</p>
         </div>
 
         <p class="section-label">Hardware Integration</p>
@@ -311,29 +311,29 @@
             <div class="feature-card">
                 <div class="icon">🎮</div>
                 <h3>Dedicated Inputs</h3>
-                <p>Players interact via dedicated tactile buttons (S1 and S2 mapped on Port B configuration registers)[cite: 2, 8].</p>
+                <p>Players interact via dedicated tactile buttons (S1 and S2 mapped on Port B configuration registers).</p>
             </div>
             <div class="feature-card">
                 <div class="icon">⚡</div>
                 <h3>Vector Interrupts</h3>
-                <p>Port B utilizes Change Notification flags configured via hardware vector #9 to reliably trigger actions instantaneously[cite: 1, 6].</p>
+                <p>Port B utilizes Change Notification flags configured via hardware vector #9 to reliably trigger actions instantaneously.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">🔢</div>
                 <h3>7-Segment Display</h3>
-                <p>The resulting pseudorandom roll number is encoded dynamically and routed over Ports A and C outputs[cite: 3, 8].</p>
+                <p>The resulting pseudorandom roll number is encoded dynamically and routed over Ports A and C outputs.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">🎲</div>
                 <h3>ADC Randomization</h3>
-                <p>An Analog-to-Digital Converter polls floating channel inputs to harvest noise, forming an unpredictable pseudo-random seed pool[cite: 1, 2, 14].</p>
+                <p>An Analog-to-Digital Converter polls floating channel inputs to harvest noise, forming an unpredictable pseudo-random seed pool.</p>
             </div>
         </div>
 
         <p class="section-label">Demonstration</p>
         <h2>Hardware Assembly in Action</h2>
         <p>
-            The setup features a breadboard configuration tied directly into the expansion pins of the PIC32MM Curiosity Board[cite: 1]. Notice the instantaneous visual evaluation, stable software-level delay debouncing, and final LED winner evaluation states[cite: 4, 23, 26]:
+            The setup features a breadboard configuration tied directly into the expansion pins of the PIC32MM Curiosity Board. Notice the instantaneous visual evaluation, stable software-level delay debouncing, and final LED winner evaluation states:
         </p>
         
         <div class="video-container">
@@ -351,7 +351,7 @@
         <p class="section-label">Implementation details</p>
         <h2>Low-Level Driver Configurations</h2>
         <p>
-            The software design relies completely on direct hardware bit-masking and register manipulation rather than abstract APIs. Below is the primary initialization routine used to secure hardware pinouts and bind vector-mapped ISR labels globally[cite: 6, 8]:
+            The software design relies completely on direct hardware bit-masking and register manipulation rather than abstract APIs. Below is the primary initialization routine used to secure hardware pinouts and bind vector-mapped ISR labels globally:
         </p>
 
         <div class="code-container">
@@ -389,18 +389,18 @@
 
         <h2>Deep-Dive Into the Subsystems</h2>
         <p>
-            The program functions across two paradigms: an asymmetric background initialization stack, and an asynchronous, interrupt-driven runtime context[cite: 6, 21, 22].
+            The program functions across two paradigms: an asymmetric background initialization stack, and an asynchronous, interrupt-driven runtime context.
         </p>
 
         <ul class="tech-list">
             <li>
-                <strong>Multi-Vectored Interrupt Architecture:</strong> To prevent polling constraints from reducing accuracy, the program implements the PIC32 multi-vectored interrupt model by modifying the <code>INTCON</code>, <code>IPC2</code>, and <code>IEC0</code> registers[cite: 17, 18]. The <code>__vector_dispatch_9</code> section explicitly maps Port B Change Notification directly to vector slot 9, letting hardware handle context routing seamlessly[cite: 6].
+                <strong>Multi-Vectored Interrupt Architecture:</strong> To prevent polling constraints from reducing accuracy, the program implements the PIC32 multi-vectored interrupt model by modifying the <code>INTCON</code>, <code>IPC2</code>, and <code>IEC0</code> registers. The <code>__vector_dispatch_9</code> section explicitly maps Port B Change Notification directly to vector slot 9, letting hardware handle context routing seamlessly.
             </li>
             <li>
-                <strong>True Noise Sampling via ADC:</strong> To create an authentic and fair roll of a 6-sided die, register <code>AD1CHS</code> routes input channel 4 (AN4) into a 10-bit Analog-to-Digital Converter[cite: 12, 14]. By tracking an ungrounded, floating analog input pin, the conversion module harvests environmental thermodynamic voltage variants to seed the pseudo-random logic blocks dynamically[cite: 1, 14].
+                <strong>True Noise Sampling via ADC:</strong> To create an authentic and fair roll of a 6-sided die, register <code>AD1CHS</code> routes input channel 4 (AN4) into a 10-bit Analog-to-Digital Converter. By tracking an ungrounded, floating analog input pin, the conversion module harvests environmental thermodynamic voltage variants to seed the pseudo-random logic blocks dynamically.
             </li>
             <li>
-                <strong>Hardware State Management:</strong> The state of the game is continuously tracked within a static register (<code>s7</code>), mapping states from active player turns to evaluating final metrics[cite: 15, 16]. This prevents button presses out of turn from modifying the display matrix.
+                <strong>Hardware State Management:</strong> The state of the game is continuously tracked within a static register (<code>s7</code>), mapping states from active player turns to evaluating final metrics. This prevents button presses out of turn from modifying the display matrix.
             </li>
         </ul>
 
@@ -427,10 +427,10 @@
 
         <ul class="tech-list">
             <li>
-                <strong>Asynchronous Edge Detection & Clears:</strong> When a user clicks a button, the change notification module sets a status bit inside the <code>CNFB</code> register[cite: 24, 25]. The ISR isolates this flag using a bitwise <code>and</code> instruction, clears the pending hardware request atomically through memory-mapped clear aliases (<code>CNFBCLR</code>), and jumps to state processing[cite: 25, 26].
+                <strong>Asynchronous Edge Detection & Clears:</strong> When a user clicks a button, the change notification module sets a status bit inside the <code>CNFB</code> register. The ISR isolates this flag using a bitwise <code>and</code> instruction, clears the pending hardware request atomically through memory-mapped clear aliases (<code>CNFBCLR</code>), and jumps to state processing.
             </li>
             <li>
-                <strong>Bare-Metal Software Debouncing:</strong> Mechanical tactile buttons exhibit minor physical contact ripples that cause a microchip to register multiple inputs from a single click. To address this, the code implements a discrete <code>delay:</code> subroutine block[cite: 23]. This runs a tight down-counting iterator loop through 25,000 cycles (<code>0x61A8</code>) to allow voltage states to stabilize before accepting subsequent inputs[cite: 23].
+                <strong>Bare-Metal Software Debouncing:</strong> Mechanical tactile buttons exhibit minor physical contact ripples that cause a microchip to register multiple inputs from a single click. To address this, the code implements a discrete <code>delay:</code> subroutine block. This runs a tight down-counting iterator loop through 25,000 cycles (<code>0x61A8</code>) to allow voltage states to stabilize before accepting subsequent inputs.
             </li>
         </ul>
 
@@ -438,7 +438,7 @@
             <p class="section-label" style="color:#67e8f9;">Outcome</p>
             <h2>Stable Hardware Execution</h2>
             <p>
-                The MIPS assembly application successfully executes entirely within bare-metal memory structures[cite: 1, 6]. By implementing physical change notification stacks alongside a modular debounce delay loop, floating edge triggers were completely mitigated[cite: 1, 23]. The dice values shift uniformly, ensuring fair game evaluation and dedicated on-board LED notifications upon winning states[cite: 1, 4].
+                The MIPS assembly application successfully executes entirely within bare-metal memory structures. By implementing physical change notification stacks alongside a modular debounce delay loop, floating edge triggers were completely mitigated. The dice values shift uniformly, ensuring fair game evaluation and dedicated on-board LED notifications upon winning states.
             </p>
         </div>
 

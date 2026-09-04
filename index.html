@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Davin Theng | Portfolio</title>
 
+    <meta name="description" content="Portfolio of Davin Theng — Computer Engineering graduate specializing in Software Development, Embedded Systems, and Hardware Integration.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Davin Theng | Computer Engineering Portfolio">
+    <meta property="og:description" content="Explore my projects in embedded systems, Python software development, and hardware integration.">
+    <meta property="og:image" content="https://pengopongo.github.io/davintheng-portfolio//images/og-preview.png">
+    <meta property="og:url" content="https://pengopongo.github.io/davintheng-portfolio/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Davin Theng | Computer Engineering Portfolio">
+    <meta name="twitter:description" content="Explore my projects in embedded systems, Python software development, and hardware integration.">
+    <meta name="twitter:image" content="https://pengopongo.github.io/davintheng-portfolio/images/og-preview.png">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -65,8 +78,6 @@
             <span>Arduino</span>
             <span>Quartus</span>
             <span>MATLAB</span>
-            <span>HTML</span>
-            <span>CSS</span>
         </div>
     </section>
 
@@ -76,7 +87,7 @@
         <div class="project-grid">
 
             <a href="kinpathic-timer.html" class="project-card project-card-link">
-                <img src="images/visual-timer.png" alt="Visual Timer">
+                <img src="images/visual-timer.webp" alt="Visual Timer">
 
                 <h3>Kin:pathic Visual Timer</h3>
 
@@ -96,7 +107,7 @@
             <div class="project-grid">
                 
                 <a href="dice-game.html" class="project-card project-card-link">
-                    <img src="images/dice-game.png" alt="Dice Game">
+                    <img src="images/dice-game.webp" alt="Dice Game">
 
                     <h3>MIPS Microprocessor Dice Game</h3>
 
@@ -115,7 +126,7 @@
             <div class="project-card">
                 
                 <a href="rdt-protocol.html" class="btn" style="margin: 0; padding: 6px 14px; font-size: 0.85rem;">
-                    <img src="images/network-protocol.png" alt="RDT Protocol Simulator Architecture">
+                    <img src="images/network-protocol.webp" alt="RDT Protocol Simulator Architecture">
                     
                     <h3>Custom Reliable Data Transfer (RDT) Protocol</h3>
                 
@@ -130,7 +141,7 @@
             </div>
 
             <div class="project-card">
-                <img src="images/inventory-tool.png" alt="Inventory Tool">
+                <img src="images/inventory-tool.webp" alt="Inventory Tool">
 
                 <h3>Digital Inventory Tracking Tool</h3>
 
@@ -151,11 +162,16 @@
     <section id="resume">
         <h2>Resume</h2>
 
-        <iframe
-            src="resume.pdf"
-            width="100%"
-            height="700">
-        </iframe>
+        <div class="resume-container">
+            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-preview-card">
+                <img src="images/resume-thumbnail.webp" alt="Davin Theng Resume Preview" class="resume-thumbnail">
+            </a>
+            <div class="resume-actions">
+                <a href="resume.pdf" download class="btn btn-secondary">
+                    Download PDF
+                </a>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
