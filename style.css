@@ -269,5 +269,29 @@ footer {
 
     .project-grid {
         grid-template-columns: 1fr; /* Stacks project cards in a single column */
-    }
+    }    
+}
+
+#contact {
+    text-align: center;
+}
+
+.contact-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+.contact-links a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-links a:hover {
+    text-decoration: underline;
 }
