@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Davin Theng | Portfolio</title>
+    <title>Davin Theng | Computer Engineering Portfolio</title>
 
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
+    <!-- Meta Description -->
     <meta name="description" content="Portfolio of Davin Theng — Computer Engineering graduate specializing in Software Development, Embedded Systems, and Hardware Integration.">
 
+    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Davin Theng | Computer Engineering Portfolio">
     <meta property="og:description" content="Explore my projects in embedded systems, Python software development, and hardware integration.">
-    <meta property="og:image" content="https://pengopongo.github.io/davintheng-portfolio//images/og-preview.webp">
+    <meta property="og:image" content="https://pengopongo.github.io/davintheng-portfolio/images/og-preview.webp">
     <meta property="og:url" content="https://pengopongo.github.io/davintheng-portfolio/">
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Davin Theng | Computer Engineering Portfolio">
     <meta name="twitter:description" content="Explore my projects in embedded systems, Python software development, and hardware integration.">
@@ -25,9 +29,8 @@
 <body>
 
     <header>
-        <nav>
-            <h1>Davin Theng</h1>
-
+        <nav aria-label="Main Navigation">
+            <a href="#" class="logo">Davin Theng</a>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -37,164 +40,139 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Computer Engineering Graduate</h2>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Computer Engineering Graduate</h2>
+                <p>Software Development • Embedded Systems • Hardware Integration</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="resume.pdf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
 
             <p>
-                Software Development • Embedded Systems • Hardware Integration
+                I recently graduated from the University of Massachusetts Lowell
+                with a Bachelor of Science in Computer Engineering.
+                My experience includes software development, embedded systems,
+                hardware integration, and Python application development.
             </p>
 
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">View Projects</a>
-                <a href="resume.pdf" class="btn btn-secondary" target="_blank">
-                    Download Resume
-                </a>
+            <p>
+                I enjoy building practical solutions that combine software and
+                hardware, including accessibility-focused applications,
+                embedded microcontroller systems, and data-driven tools.
+            </p>
+
+            <div class="skills">
+                <span>C</span>
+                <span>C++</span>
+                <span>Python</span>
+                <span>VHDL</span>
+                <span>MIPS Assembly</span>
+                <span>Linux</span>
+                <span>Arduino</span>
+                <span>Quartus</span>
+                <span>MATLAB</span>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-
-        <p>
-            I recently graduated from the University of Massachusetts Lowell
-            with a Bachelor of Science in Computer Engineering.
-            My experience includes software development, embedded systems,
-            hardware integration, and Python application development.
-        </p>
-
-        <p>
-            I enjoy building practical solutions that combine software and
-            hardware, including accessibility-focused applications,
-            embedded microcontroller systems, and data-driven tools.
-        </p>
-
-        <div class="skills">
-            <span>C</span>
-            <span>C++</span>
-            <span>Python</span>
-            <span>VHDL</span>
-            <span>MIPS Assembly</span>
-            <span>Linux</span>
-            <span>Arduino</span>
-            <span>Quartus</span>
-            <span>MATLAB</span>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="project-grid">
-
-            <a href="kinpathic-timer.html" class="project-card project-card-link">
-                <img src="images/visual-timer.webp" alt="Visual Timer">
-
-                <h3>Kin:pathic Visual Timer</h3>
-
-                <p>
-                    Developed a child-friendly visual timer using Python and
-                    Pygame. The application uses personalized images to help
-                    children understand the passage of time.
-                </p>
-
-                <p class="tech">
-                    Python • Pygame • Raspberry Pi
-                </p>
-
-                <p class="view-more">View Project →</p>
-            </a>
+        <section id="projects">
+            <h2>Projects</h2>
 
             <div class="project-grid">
-                
+
+                <a href="kinpathic-timer.html" class="project-card project-card-link">
+                    <img src="images/visual-timer.webp" alt="Kin:pathic Visual Timer">
+                    <h3>Kin:pathic Visual Timer</h3>
+                    <p>
+                        Developed a child-friendly visual timer using Python and
+                        Pygame. The application uses personalized images to help
+                        children understand the passage of time.
+                    </p>
+                    <p class="tech">Python • Pygame • Raspberry Pi</p>
+                    <p class="view-more">View Project →</p>
+                </a>
+
                 <a href="dice-game.html" class="project-card project-card-link">
-                    <img src="images/dice-game.webp" alt="Dice Game">
-
+                    <img src="images/dice-game.webp" alt="MIPS Microprocessor Dice Game">
                     <h3>MIPS Microprocessor Dice Game</h3>
-
                     <p>
                         Created a two-player dice game on a PIC32MM Curiosity
                         Development Board using hardware-level C programming,
                         interrupts, timers, and ADC inputs.
                     </p>
-
-                    <p class="tech">
-                        C • PIC32MM • Embedded Systems
-                    </p>
+                    <p class="tech">C • PIC32MM • Embedded Systems</p>
+                    <p class="view-more">View Project →</p>
                 </a>
-            </div>
 
-            <div class="project-grid">
-        
                 <a href="rdt-protocol.html" class="project-card project-card-link">
                     <img src="images/network-protocol.webp" alt="RDT Protocol Simulator Architecture">
-                    
                     <h3>Custom Reliable Data Transfer (RDT) Protocol</h3>
-                
                     <p>
-                    Engineered a Python transport protocol simulator layer constructed over raw connectionless UDP pipelines, 
-                    implementing full sliding window logic, custom checksum generation, and simulated noise mitigation.
+                        Engineered a Python transport protocol simulator layer constructed over raw connectionless UDP pipelines, 
+                        implementing full sliding window logic, custom checksum generation, and simulated noise mitigation.
                     </p>
-                    
                     <p class="tech">Python • Sockets • Network Protocols • FSM</p>
-                
+                    <p class="view-more">View Project →</p>
                 </a>
-            </div>
 
-            <div class="project-grid">
                 <a href="inventory-tool.html" class="project-card project-card-link">
-                    <img src="images/inventory-tool.webp" alt="Inventory Tool">
-
-                <h3>Digital Inventory Tracking Tool</h3>
-
-                <p>
-                    Designed an inventory management application to monitor
-                    ingredient usage, stock levels, and automate reorder
-                    notifications.
-                </p>
-
-                <p class="tech"> Python • Inventory Management </p>
+                    <img src="images/inventory-tool.webp" alt="Digital Inventory Tracking Tool">
+                    <h3>Digital Inventory Tracking Tool</h3>
+                    <p>
+                        Designed an inventory management application to monitor
+                        ingredient usage, stock levels, and automate reorder
+                        notifications.
+                    </p>
+                    <p class="tech">Python • Inventory Management</p>
+                    <p class="view-more">View Project →</p>
                 </a>
+
             </div>
+        </section>
 
-        </div>
-    </section>
+        <section id="resume">
+            <h2>Resume</h2>
 
-    <section id="resume">
-        <h2>Resume</h2>
-
-        <div class="resume-container">
-            <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-preview-card">
-                <img src="images/resume-thumbnail.webp" alt="Davin Theng Resume Preview" class="resume-thumbnail">
-            </a>
-            <div class="resume-actions">
-                <a href="resume.pdf" download class="btn btn-secondary">
-                    Download PDF
+            <div class="resume-container">
+                <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="resume-preview-card">
+                    <img src="images/resume-thumbnail.webp" alt="Davin Theng Resume Preview" class="resume-thumbnail">
                 </a>
+                <div class="resume-actions">
+                    <a href="resume.pdf" download class="btn btn-secondary">
+                        Download PDF
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-<section id="contact">
-        <h2>Contact</h2>
-        <p>Feel free to reach out for opportunities, collaborations, or questions!</p>
-        
-        <ul class="contact-links">
-            <li>
-                <strong>Email:</strong> 
-                <a href="mailto:Davinthe9155@gmail.com">Davinthe9155@gmail.com</a>
-            </li>
-            <li>
-                <strong>LinkedIn:</strong> 
-                <a href="https://www.linkedin.com/in/davin-theng-b553a4304" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
-            </li>
-            <li>
-                <strong>GitHub:</strong> 
-                <a href="https://github.com/PengoPongo" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-            </li>
-        </ul>
-    </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to reach out for opportunities, collaborations, or questions!</p>
+            
+            <ul class="contact-links">
+                <li>
+                    <strong>Email:</strong> 
+                    <a href="mailto:Davinthe9155@gmail.com">Davinthe9155@gmail.com</a>
+                </li>
+                <li>
+                    <strong>LinkedIn:</strong> 
+                    <a href="https://www.linkedin.com/in/davin-theng-b553a4304" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+                </li>
+                <li>
+                    <strong>GitHub:</strong> 
+                    <a href="https://github.com/PengoPongo" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+                </li>
+            </ul>
+        </section>
+    </main>
 
     <footer>
         <p>© 2026 Davin Theng</p>
